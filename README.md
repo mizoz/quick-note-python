@@ -1,6 +1,12 @@
 # Quick Note Python
 
-A fast and simple note-taking CLI tool for capturing ideas instantly.
+[![PyPI Version](https://img.shields.io/pypi/v/quick-note-python?style=flat-square)](https://pypi.org/project/quick-note-python/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/quick-note-python?style=flat-square)](https://pypi.org/project/quick-note-python/)
+[![License](https://img.shields.io/pypi/l/quick-note-python?style=flat-square)](LICENSE)
+[![Python Version](https://img.shields.io/pypi/pyversions/quick-note-python?style=flat-square)](https://pypi.org/project/quick-note-python/)
+[![GitHub Stars](https://img.shields.io/github/stars/mizoz/quick-note-python?style=flat-square)](https://github.com/mizoz/quick-note-python)
+
+> A fast and simple Python CLI tool for capturing ideas and notes instantly from the command line.
 
 ## Features
 
@@ -13,11 +19,13 @@ A fast and simple note-taking CLI tool for capturing ideas instantly.
 
 ## Installation
 
+### From PyPI
+
 ```bash
 pip install quick-note-python
 ```
 
-Or clone and install:
+### From Source
 
 ```bash
 git clone https://github.com/mizoz/quick-note-python.git
@@ -26,6 +34,8 @@ pip install -e .
 ```
 
 ## Usage
+
+### Command Line
 
 ```bash
 # Create a new note
@@ -44,17 +54,50 @@ quick-note search "idea"
 quick-note delete 1
 ```
 
-## Options
+### Python API
 
-- `list` - List all notes
-- `search <query>` - Search notes
-- `delete <id>` - Delete a note by ID
-- `--tag` - Add tags to a note
+```python
+from quick_note import QuickNote
+
+notes = QuickNote()
+
+# Add a note
+notes.add("My new idea", tags=["idea"])
+
+# List all notes
+all_notes = notes.list()
+print(all_notes)
+
+# Search notes
+results = notes.search("idea")
+```
+
+## CLI Options
+
+| Option | Description |
+|--------|-------------|
+| `list` | List all notes |
+| `search <query>` | Search notes |
+| `delete <id>` | Delete a note by ID |
+| `--tag` | Add tags to a note |
+
+## Requirements
+
+- Python 3.7+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
 
 ## Author
 
-mizoz
+**mizoz**
+- GitHub: [@mizoz](https://github.com/mizoz)
+
+---
+
+⭐ If you find this project useful, please consider giving it a star on GitHub!
